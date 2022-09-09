@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 function toggleAccordion ()
 {
-    var open_content = $(this).next();
+    let open_content = $(this).next();
     open_content.slideToggle(100);
     $('.accordion .accordion-item-content').not(open_content).slideUp(100);
 }
