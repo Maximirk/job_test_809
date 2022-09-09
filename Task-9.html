@@ -66,14 +66,14 @@
 
 <script>
 $(document).ready(function() {
-    $('.accordion .accordion-item-head').on('click', toggleAccordion);
+    $(".accordion .accordion-item-head").on("click", toggleAccordion);
 });
 
 function toggleAccordion ()
 {
     let open_content = $(this).next();
     open_content.slideToggle(100);
-    $('.accordion .accordion-item-content').not(open_content).slideUp(100);
+    $(".accordion .accordion-item-content").not(open_content).slideUp(100);
 }
 </script>
 
