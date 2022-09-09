@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Заголовок</title>
+    <meta name="description" content="Аккордеон">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <style>
+        .accordion {
+            width: 300px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        .accordion-item-head {
+            padding: 5px 10px;
+            background-color: #eeeeee;
+            border-bottom: 1px solid #000000;
+            cursor: pointer;
+            user-select: none;
+        }
+        .accordion-item-content {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="accordion">
+    <div class="accordion-item">
+        <div class="accordion-item-head">
+            Заголовок 1
+        </div>
+        <div class="accordion-item-content">
+            тестовый текст! тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-item-head">
+            Заголовок 2
+        </div>
+        <div class="accordion-item-content">
+            тестовый текст! тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-item-head">
+            Заголовок 3
+        </div>
+        <div class="accordion-item-content">
+            тестовый текст! тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!тестовый текст!
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+    $('.accordion .accordion-item-head').on('click', toggleAccordion);
+});
+
+function toggleAccordion ()
+{
+    var open_content = $(this).next();
+    open_content.slideToggle(100);
+    $('.accordion .accordion-item-content').not(open_content).slideUp(100);
+}
+</script>
+
+</body>
+</html>

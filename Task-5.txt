@@ -1,0 +1,32 @@
+Задача: Напишите структуру базы данных для хранения информации о своей книжной Библиотеке:
+основная информация названия книг и имена авторов.
+
+-- Структура таблицы `books`
+CREATE TABLE `books` (
+    `id_book` int(11) NOT NULL,
+    `name_book` text CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Структура таблицы `authors`
+CREATE TABLE `authors` (
+    `id_author` int(11) NOT NULL,
+    `name_author` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Структура таблицы `author_to_book`
+CREATE TABLE `author_to_book` (
+    `id_author` int(11) NOT NULL,
+    `id_book` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-----------------------------------------------------------------
+
+-- Индексы таблицы `books`
+ALTER TABLE `books` ADD PRIMARY KEY (`id_book`);
+
+-- Индексы таблицы `authors`
+ALTER TABLE `authors` ADD PRIMARY KEY (`id_author`);
+
+-- Индексы таблицы `author_to_book`
+ALTER TABLE `author_to_book` ADD PRIMARY KEY (`id_author`,`id_book`), ADD KEY `id_book` (`id_book`);
+
